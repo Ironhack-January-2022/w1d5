@@ -304,3 +304,60 @@ const s = 'rick sanchez'
 
 const rev = s.split('').reverse().join('')
 console.log(rev)
+
+console.clear()
+
+// sort() - this sorts an array in place
+
+const nums4 = [7, 12, 23, 45]
+// this would sort the numbers by their encoded values
+// nums4.sort() // ->  [12, 23, 45, 7]
+
+nums4.sort(function (a, b) {
+	console.log(a, b)
+	// if (b < a) {
+	// 	return - 23
+	// }
+	// if (a < b) {
+	// 	return 54
+	// }
+	// if (a === b) {
+	// 	return 0
+	// }
+	// this sorts descending
+	// return b - a
+	// this sorts ascending
+	return a - b
+})
+console.log(nums4)
+
+const reviews = [
+	{
+		name: 'foo',
+		rate: 9,
+		score: 7
+	},
+	{
+		name: 'bar',
+		rate: 9,
+		score: 5
+	},
+	{
+		name: 'baz',
+		rate: 5,
+		score: 4
+	}
+]
+
+// 1. sort the reviews ascending by their rate
+
+const sorted = reviews.sort(function (a, b) {
+	if (a.rate === b.rate) {
+		return a.score - b.score
+	}
+	return a.rate - b.rate
+})
+console.log(sorted)
+
+// 2. add a secondary sort criterion if two rates are the same 
+// sort by the score
